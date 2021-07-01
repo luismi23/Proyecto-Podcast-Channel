@@ -1,0 +1,179 @@
+header {
+  width: 320px;
+  position: relative;
+  height: 45px;
+  top: 0;
+  padding: 10px 5% 0 5%;
+  margin-bottom: -40px;
+  background-color: #ffffffff;
+  img {
+    float: left;
+  }
+  nav {
+    float: right;
+    .menu {
+      padding-top: 3px;
+      ul {
+        /*posicion absolute para que se posicione debajo del resto del header - top medida del header*/
+
+        width: 100%;
+        position: absolute;
+        //   top: 45px;
+        right: 0;
+        overflow: hidden;
+        list-style: none;
+        background: #0000ec 100%;
+        height: 0px;
+        transition: height 0.5s ease;
+        li {
+          position: relative;
+          a {
+            position: relative;
+            text-decoration: none;
+            color: #ffffffff;
+            padding: 16px 5%;
+            line-height: 28px;
+            display: block;
+            font-family: "ibm plex mono";
+          }
+        }
+      }
+    }
+  }
+}
+
+header nav .menu ul li:hover {
+  background: #5a5a5a;
+}
+
+header nav .menu ul li a:hover {
+  color: #fff;
+}
+/*animación del menu que se desplega*/
+header nav .menu input[type="checkbox"]:checked ~ ul {
+  height: 240px;
+  transition: height 0.5s ease-in-out;
+  -moz-transition: height 0.5s ease-in-out;
+  -o-transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+}
+
+/*checkbox transparente y en primer plano*/
+header nav .menu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+}
+/*span -lineas del menu hamburguesa-*/
+header nav .menu span {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  margin-bottom: 3.5px;
+  position: relative;
+  background: #000;
+  z-index: 1;
+  transform-origin: 3px 0px;
+  transition: transform 0.5s ease, opacity 0.55s ease;
+}
+header nav .menu span:first-child {
+  transform-origin: 0% 0%;
+}
+header nav .menu span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+/*movimiento a cruz*/
+header nav .menu input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(2px, 1px);
+}
+header nav .menu input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+header nav .menu input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(1px, 0px);
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    height: 80px;
+    position: fixed;
+    background: #ffffffff;
+
+    z-index: 3;
+    img {
+      width: 36px;
+      height: 36px;
+      margin: 10px 0 0 30px;
+    }
+  }
+  header nav .menu ul {
+    position: relative;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    background: unset;
+    height: unset;
+  }
+  header nav .menu ul li {
+    padding: 5px 10px;
+    display: inline-block;
+  }
+
+  
+  header nav .menu ul li a {
+    padding: unset;
+    line-height: unset;
+    font-family: "IBM Plex Mono";
+    font-size: 16px;
+    color: #060a24;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  header nav .menu ul li a:hover {
+    color: unset;
+  }
+  header nav .menu input {
+    display: none;
+  }
+  header nav .menu span {
+    display: none;
+  }
+  header nav .menu ul li:hover {
+    background: unset;
+    font-family: IBMPlexMono-Medium;
+    font-size: 16px;
+    color: #00f3bb;
+
+    letter-spacing: 0;
+    line-height: 28px;
+    text-decoration: line-through;
+  }
+  header nav .menu ul li:active {
+    font-size: 16px;
+    color: rgba(6, 10, 36, 0.56);
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+  header nav .menu ul li:active {
+    color: unset;
+    background: unset;
+  }
+}
+
+@media screen and (min-width: 321px) {
+  header {
+    width: 100%;
+  }
+
+  footer {
+    padding-left: 3%;
+  }
+  br {
+    display: none;
+  }
+}

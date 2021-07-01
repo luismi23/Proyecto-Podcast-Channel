@@ -1,0 +1,35 @@
+a {
+  padding: 100px 0;
+}
+.boton_personalizado {
+  text-decoration: none;
+  padding: 12px 90px;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  background: #00f3bb 100%;
+
+  margin: 10px 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+  color: #060a24;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+}
+.boton_personalizado2 {
+  text-decoration: none;
+  padding: 15px 35px;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  background: #00f3bb 100%;
+
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 18px;
+  color: #060a24;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 24px;
+  transform: skewY(-6deg);
+}
