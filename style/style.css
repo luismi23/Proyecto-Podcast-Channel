@@ -536,6 +536,10 @@ section p {
   }
 }
 
+i {
+  color: black;
+}
+
 section h2 {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 36px;
